@@ -1,3 +1,5 @@
+
+
 # Cow wisdom web server
 
 ## Prerequisites
@@ -26,3 +28,14 @@ Deploy the wisecow application as a k8s app
 1. Github repo containing the app with corresponding dockerfile, k8s manifest, any other artifacts needed.
 2. Github repo with corresponding github action.
 3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul
+
+
+## 🔐 KubeArmor Zero-Trust Policy (PS3)
+
+A zero-trust KubeArmor policy was applied to the Wisecow Kubernetes workload.
+Since this setup uses Minikube with Docker driver, KubeArmor operates in audit mode.
+
+### 📸 Policy Detection Evidence
+
+![KubeArmor Policy Detected](security/kubearmor-policy-detected.png)
+
