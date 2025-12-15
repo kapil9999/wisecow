@@ -1,0 +1,25 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: wisecow-zero-trust
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: wisecow
+
+  process:
+    matchPaths:
+    - path: /bin/dash
+    - path: /usr/bin/dash
+    - path: /bin/bash
+    - path: /usr/bin/curl
+    action: Block
+
+  file:
+    matchPaths:
+    - path: /etc/passwd
+    action: Block
+
+  severity: 5
+
